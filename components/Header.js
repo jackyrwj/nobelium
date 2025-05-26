@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useConfig } from '@/lib/config'
 import { useLocale } from '@/lib/locale'
 import useTheme from '@/lib/theme'
+import SocialIcons from './SocialIcons'
 
 const NavBar = () => {
   const BLOG = useConfig()
@@ -16,7 +17,7 @@ const NavBar = () => {
   ]
   return (
     <div className="flex-shrink-0">
-      <ul className="flex flex-row">
+      <ul className="flex flex-row items-center">
         {links.map(
           link =>
             link.show && (
@@ -28,6 +29,9 @@ const NavBar = () => {
               </li>
             )
         )}
+        <li className="ml-4">
+          <SocialIcons />
+        </li>
       </ul>
     </div>
   )
