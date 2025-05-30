@@ -9,16 +9,17 @@ export default {
     extend: {
       colors: {
         day: {
-          DEFAULT: config.lightBackground || '#ffffff'
+          DEFAULT: config.lightBackground
         },
         night: {
-          DEFAULT: config.darkBackground || '#111827'
+          DEFAULT: config.darkBackground
         }
       },
       fontFamily: {
-        sans: FONTS_SANS,
-        serif: FONTS_SERIF,
+        sans: ['LXGWWenKaiGBScreen', ...FONTS_SANS],
+        serif: ['LXGWWenKaiGBScreen', ...FONTS_SERIF],
         noEmoji: [
+          'LXGWWenKaiGBScreen',
           '"IBM Plex Sans"',
           'ui-sans-serif',
           'system-ui',

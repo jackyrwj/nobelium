@@ -1,6 +1,12 @@
 module.exports = {
   images: {
-    domains: ['gravatar.com']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'gravatar.com',
+        pathname: '/**',
+      },
+    ],
   },
   eslint: {
     // dirs: ['components', 'layouts', 'lib', 'pages']

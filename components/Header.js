@@ -12,8 +12,11 @@ const NavBar = () => {
   const links = [
     { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
     { id: 1, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
-    { id: 2, name: locale.NAV.RSS, to: '/feed', show: true, external: true },
-    { id: 3, name: locale.NAV.SEARCH, to: '/search', show: true }
+    { id: 2, name: '愿望清单', to: '/wishlist', show: true },
+    { id: 3, name: '我的媒体库', to: '/media', show: true },
+    { id: 4, name: locale.NAV.RSS, to: '/feed', show: true, external: true },
+    { id: 5, name: locale.NAV.SEARCH, to: '/search', show: true },
+    { id: 6, name: '格言', to: '/geyan', show: true }
   ]
   return (
     <div className="flex-shrink-0">
@@ -109,8 +112,8 @@ export default function Header ({ navBarTitle, fullWidth }) {
           <Link href="/" aria-label={BLOG.title}>
             <Image
               src={favicon}
-              width={24}
-              height={24}
+              width={40}
+              height={40}
               alt={BLOG.title}
               onError={() => setFavicon(true)}
             />
@@ -133,13 +136,13 @@ const HeaderName = forwardRef(function HeaderName ({ siteTitle, siteDescription,
   return (
     <p
       ref={ref}
-      className="header-name ml-2 font-medium text-gray-600 dark:text-gray-300 capture-pointer-events grid-rows-1 grid-cols-1 items-center"
+      className="header-name ml-2 font-medium text-gray-600 dark:text-gray-300 capture-pointer-events flex items-center"
       onClick={onClick}
     >
       {postTitle && <span className="post-title row-start-1 col-start-1">{postTitle}</span>}
-      <span className="row-start-1 col-start-1">
-        <span className="site-title">{siteTitle}</span>
-        <span className="site-description font-normal">, {siteDescription}</span>
+      <span className="row-start-1 col-start-1 flex items-center">
+        <span className="site-title whitespace-nowrap">{siteTitle}</span>
+        <span className="site-description font-normal whitespace-nowrap">, {siteDescription}</span>
       </span>
     </p>
   )
